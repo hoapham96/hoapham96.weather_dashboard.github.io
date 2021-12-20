@@ -22,17 +22,16 @@ for (i = 0; i < close.length; i++) {
   }
 }
 
-// Add a "checked" symbol when clicking on a list item
 var list = document.querySelector('ul');
-list.addEventListener('click', function(ev) {
-  let checkedElelement = document.getElementById('checked')
-  console.log("look at me: "+ev.target.getAttribute("value"));
+list.addEventListener('click', async function(ev) {
   if (ev.target.tagName === 'LI') {
-    console.log("important: "+ev.target.value);
-    checkedElelement.removeAttribute('id');
-    ev.target.setAttribute("id", "checked");
-    checkedElelement = document.getElementById('checked')
-    console.log(checkedElelement.getAttribute("value")); 
+    city=ev.target.getAttribute("value")
+    let value = await getLatandLongbyCity(city)
+    let latitude = value.lat
+    let longitude = value.lng
+    fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly&units=metric&appid=${API_KEY}`).then(res => res.json()).then(data => {
+      showWeatherData(data);
+    })
     
   }
 }, false);
@@ -41,6 +40,7 @@ list.addEventListener('click', function(ev) {
 function newElement() {
   var li = document.createElement("li");
   var inputValue = document.getElementById("myInput").value;
+  li.setAttribute("value", inputValue)
   var t = document.createTextNode(inputValue);
   li.appendChild(t);
   if (inputValue === '') {
@@ -87,13 +87,14 @@ var button = document.querySelector('.buttom')
 // }
 // findLocation()
 
-function getLatandLongbyCity () {
-  let res = fetch('https://maps.googleapis.com/maps/api/geocode/json?address=Austin&key=AIzaSyCFVvYHINQ3vKjfx9ooOSgh23Rk4yKmPtU')
-  .then(res => res.json()).then(data=> console.log(data.results.geometry.location.lat))
-  
+function getLatandLongbyCity (city) {
+  return fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${city}&key=AIzaSyCFVvYHINQ3vKjfx9ooOSgh23Rk4yKmPtU`)
+  .then(res => res.json()).then(data=> {
+    console.log(data.results[0].geometry.location);
+    return data.results[0].geometry.location
+  })
 }
 
-getLatandLongbyCity()
 
 
 const dateEl = document.getElementById('city-date');
@@ -108,8 +109,6 @@ const API_KEY ='1901f77fa17d1458bb24b8b1640ff569';
 getWeatherData()
 function getWeatherData () {
     navigator.geolocation.getCurrentPosition((success) => {
-      console.log(success);
-        
         let {latitude, longitude } = success.coords;
 
         fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly&units=metric&appid=${API_KEY}`).then(res => res.json()).then(data => {
