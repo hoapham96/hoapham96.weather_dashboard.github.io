@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link rel="stylesheet" href="./assets/style.css" />
+</head>
+
+<body>
+  <header class="caption text-center text-white bg-dark p-2">
+    <div class="app-title">Weather Dashboard</div>
+  </header>
+
+  <main>
+    <div class="row">
+    <div class="column">
+      <div id="myDIV" class="header">
+        <h2>Search for a City:</h2>
+        <input type="text" id="myInput" placeholder="San Diego"><br>
+        <button onclick="newElement()" class="addBtn">Search</button>
+      </div>
+      <ul id="myUL">
+        <li value="Austin">Austin</li>
+        <li value="Chicago">Chicago</li>
+        <li value="Chicago">New York</li>
+        <li value="Chicago">Orlando</li>
+        <li value="Chicago">San Francisco</li>
+        <li value="Chicago">Seattle</li>
+        <li value="Chicago">Denver</li>
+        <li value="Chicago" id="checked">Atlanta</li>
+      </ul>
+      </div>
+      <div class="column">
+      <div class="container">
+        <div class="container">
+          <div class="current-info">
+            <div class="city-date-container">
+              <div class="city-date" id="city-date">Atlanta (3/31/2021)</div>
+              <div class="others" id="current-weather-items"></div>
+            </div>
+
+            <div class="place-container">
+              <div class="time-zone" id="time-zone">Asia/Kolkata</div>
+              <div id="country" class="country">IN</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="day">3/31/2021</div>
+      <h2 class="cityName">Atlanta</h2>>
+      <div class="temp">74.01</div>
+      <div class="wind">6.67 MPH</div>
+      <div class="humidity">46 %</div>
+      <div class="UVIndex">0.47</div> -->
+      </div>
+      <div class="col-12">
+        <h2>5-Day Forecast</h2>
+      </div>
+      <div class="weather-forecast" id="weather-forecast">
+        <div class=weather-forecast-item>
+          <div class="day">3/31/2021</div>
+          <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+          <div class="tempCard">73.72</div>
+          <div class="windCard">9.53 MPH</div>
+          <div class="himidityCard">66 %</div>
+        </div>
+        <div class=weather-forecast-item>
+          <div class="day">3/31/2021</div>
+          <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+          <div class="tempCard">73.72</div>
+          <div class="windCard">9.53 MPH</div>
+          <div class="himidityCard">66 %</div>
+        </div>
+        <div class=weather-forecast-item>
+          <div class="day">3/31/2021</div>
+          <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+          <div class="tempCard">73.72</div>
+          <div class="windCard">9.53 MPH</div>
+          <div class="himidityCard">66 %</div>
+        </div>
+        <div class=weather-forecast-item>
+          <div class="day">3/31/2021</div>
+          <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+          <div class="tempCard">73.72</div>
+          <div class="windCard">9.53 MPH</div>
+          <div class="himidityCard">66 %</div>
+        </div>
+        <div class=weather-forecast-item>
+          <div class="day">3/31/2021</div>
+          <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+          <div class="tempCard">73.72</div>
+          <div class="windCard">9.53 MPH</div>
+          <div class="himidityCard">66 %</div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+    integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="./assets/script.js"></script>
+</body>
+
+</html>
