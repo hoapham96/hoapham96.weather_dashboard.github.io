@@ -91,7 +91,7 @@ position: absolute;
     font-size: 25px;
     font-weight: bold;
 }
-.icon{
-    width: 60px;
+.icon img{
+    width: 60px !important;
     height: 60px;
 }
