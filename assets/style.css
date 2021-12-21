@@ -18,11 +18,13 @@ ul li {
     background: #eee;
     font-size: 18px;
     transition: 0.2s;
+    border-radius: 5px;
 }
 input {
     font-size: 16px;
     padding: 10px;
     width: 100%;
+    border-radius: 5px;
   }
 .addBtn{
     width: 100%;
@@ -33,28 +35,51 @@ input {
   background-color:rgb(34, 34, 238);
   background-position: 10px 10px; 
   color: white;
+  border-radius: 10px;
 }
 .container{
     float: left;
-  width: 33.3%;
+  width: 100%;
   margin-bottom: 16px;
   padding: 0 8px;
 }
-.column {
+.leftcolumn {
     float: left;
-    width: 50%;
+    width: 25%;
     padding: 10px;
     height: 300px;
 }
-.weather-forecast .weather-forecast-item{
-    background: rgba(24,24,27,0.8);
+.rightcolumn{
+    float: right;
+    width: 75%;
+}
+.dayForecast{
+position: absolute;
+  width: 75%;
+  bottom: 200px;
+  border: 3px solid #8AC007
+}
+.weather-item{
+ 
+}
+.weather-forecast{
     padding: 25px;
     position: fixed;
     bottom: 0;
     display: flex;
     color:white;
-    width: 100%;
+    width: 75%;
     align-items: center;
     justify-content: center;
     overflow-y: hidden;
+}
+.weather-forecast .weather-forecast-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    padding: 15px;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.2)
 }

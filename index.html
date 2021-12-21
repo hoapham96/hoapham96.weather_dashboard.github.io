@@ -19,89 +19,84 @@
 
   <main>
     <div class="row">
-    <div class="column">
-      <div id="myDIV" class="header">
-        <h2>Search for a City:</h2>
-        <input type="text" id="myInput" placeholder="San Diego"><br>
-        <button onclick="newElement()" class="addBtn">Search</button>
+      <div class="leftcolumn">
+        <div id="myDIV" class="header">
+          <h2>Search for a City:</h2>
+          <input type="text" id="myInput" placeholder="San Diego"><br>
+          <button onclick="newElement()" class="addBtn">Search</button>
+        </div>
+        <ul id="myUL">
+          <li value="Austin">Austin</li>
+          <li value="Chicago">Chicago</li>
+          <li value="New York">New York</li>
+          <li value="Orlando">Orlando</li>
+          <li value="San Francisco">San Francisco</li>
+          <li value="Seattle">Seattle</li>
+          <li value="Denver">Denver</li>
+          <li value="Atlanta">Atlanta</li>
+        </ul>
       </div>
-      <ul id="myUL">
-        <li value="Austin">Austin</li>
-        <li value="Chicago">Chicago</li>
-        <li value="New York">New York</li>
-        <li value="Orlando">Orlando</li>
-        <li value="San Francisco">San Francisco</li>
-        <li value="Seattle">Seattle</li>
-        <li value="Denver">Denver</li>
-        <li value="Atlanta">Atlanta</li>
-      </ul>
-      </div>
-      <div class="column">
-      <div class="container">
+      <div class="rightcolumn">
         <div class="container">
-          <div class="current-info">
-            <div class="city-date-container">
-              <div class="city-date" id="city-date">Atlanta (3/31/2021)</div>
-              <div class="others" id="current-weather-items"></div>
-            </div>
+            <div class="current-info">
+              <div class="city-date-container">
+                <div class="city-date" id="city-date">
+                  <div class="city" id="city"></div>
+                  <div class= "day" id="day">(3/31/2021)</div>
+                </div>
+                <div class="others" id="current-weather-items"></div>
+              </div>
 
-            <div class="place-container">
-              <div class="time-zone" id="time-zone">Asia/Kolkata</div>
-              <div id="country" class="country">IN</div>
+              <div class="place-container">
+                <div class="time-zone" id="time-zone">Asia/Kolkata</div>
+                <div id="country" class="country">IN</div>
+              </div>
             </div>
+        </div>
+        
+        <div class="dayForecast">
+          <h2>5-Day Forecast</h2>
+        </div>
+        <div class="weather-forecast" id="weather-forecast">
+          <div class=weather-forecast-item>
+            <div class="day">3/31/2021</div>
+            <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+            <div class="tempCard">73.72</div>
+            <div class="windCard">9.53 MPH</div>
+            <div class="himidityCard">66 %</div>
+          </div>
+          <div class=weather-forecast-item>
+            <div class="day">3/31/2021</div>
+            <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+            <div class="tempCard">73.72</div>
+            <div class="windCard">9.53 MPH</div>
+            <div class="himidityCard">66 %</div>
+          </div>
+          <div class=weather-forecast-item>
+            <div class="day">3/31/2021</div>
+            <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+            <div class="tempCard">73.72</div>
+            <div class="windCard">9.53 MPH</div>
+            <div class="himidityCard">66 %</div>
+          </div>
+          <div class=weather-forecast-item>
+            <div class="day">3/31/2021</div>
+            <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+            <div class="tempCard">73.72</div>
+            <div class="windCard">9.53 MPH</div>
+            <div class="himidityCard">66 %</div>
+          </div>
+          <div class=weather-forecast-item>
+            <div class="day">3/31/2021</div>
+            <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
+            <div class="tempCard">73.72</div>
+            <div class="windCard">9.53 MPH</div>
+            <div class="himidityCard">66 %</div>
           </div>
         </div>
-
-        <!-- <div class="day">3/31/2021</div>
-      <h2 class="cityName">Atlanta</h2>>
-      <div class="temp">74.01</div>
-      <div class="wind">6.67 MPH</div>
-      <div class="humidity">46 %</div>
-      <div class="UVIndex">0.47</div> -->
-      </div>
-      <div class="col-12">
-        <h2>5-Day Forecast</h2>
-      </div>
-      <div class="weather-forecast" id="weather-forecast">
-        <div class=weather-forecast-item>
-          <div class="day">3/31/2021</div>
-          <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-          <div class="tempCard">73.72</div>
-          <div class="windCard">9.53 MPH</div>
-          <div class="himidityCard">66 %</div>
-        </div>
-        <div class=weather-forecast-item>
-          <div class="day">3/31/2021</div>
-          <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-          <div class="tempCard">73.72</div>
-          <div class="windCard">9.53 MPH</div>
-          <div class="himidityCard">66 %</div>
-        </div>
-        <div class=weather-forecast-item>
-          <div class="day">3/31/2021</div>
-          <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-          <div class="tempCard">73.72</div>
-          <div class="windCard">9.53 MPH</div>
-          <div class="himidityCard">66 %</div>
-        </div>
-        <div class=weather-forecast-item>
-          <div class="day">3/31/2021</div>
-          <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-          <div class="tempCard">73.72</div>
-          <div class="windCard">9.53 MPH</div>
-          <div class="himidityCard">66 %</div>
-        </div>
-        <div class=weather-forecast-item>
-          <div class="day">3/31/2021</div>
-          <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-          <div class="tempCard">73.72</div>
-          <div class="windCard">9.53 MPH</div>
-          <div class="himidityCard">66 %</div>
-        </div>
       </div>
     </div>
     </div>
-  </div>
   </main>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
