@@ -18,3 +18,5 @@ THEN I am again presented with current and future conditions for that city
 
 ## Deployed application URL
 https://hoapham96.github.io/hoapham96.weather_dashboard.github.io/
+
+![image](https://user-images.githubusercontent.com/89959754/146968634-a9b8b2d9-7721-41dd-93a0-b5166f5ffcc3.png)
