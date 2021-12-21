@@ -80,8 +80,6 @@ function getLatandLongbyCity (city) {
 
 const dateEl = document.getElementById('day');
 const currentWeatherItemsEl = document.getElementById('current-weather-items');
-const timezone = document.getElementById('time-zone');
-const countryEl = document.getElementById('country');
 const weatherForecastEl = document.getElementById('weather-forecast');
 const currentTempEl = document.getElementById('current-temp');
 
@@ -123,14 +121,14 @@ dateEl.innerHTML =  (month+1 + '/' + date + '/' + year)
 
 function showWeatherData (data){
     let {humidity, feels_like, uvi, wind_speed} = data.current;
-
-    timezone.innerHTML = data.timezone;
-    countryEl.innerHTML = data.lat + 'N ' + data.lon+'E'
+    var iconElement = document.getElementById('icon')
+    iconElement.innerHTML =
+     `<img src="http://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png">`
 
     currentWeatherItemsEl.innerHTML = 
     `
     <div class="weather-item">
-        <div>Temp: ${feels_like*9/5+32}</div>
+        <div>Temp: ${(feels_like*9/5+32).toFixed(2)}</div>
     </div>
     <div class="weather-item">
         <div>Wind Speed: ${wind_speed} MPH</div>
@@ -168,7 +166,7 @@ function showWeatherData (data){
                 <div class="day">${window.moment(day.dt*1000).format('ddd')}</div>
                 <img src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt="weather icon" class="w-icon">
                 <div class="tempCard">Temp: ${(day.feels_like.day*9/5+32).toFixed(2)}</div>
-                <div class="windCard">Wind Speed: ${day.wind_speed} MPH</div>
+                <div class="windCard">Wind: ${day.wind_speed} MPH</div>
                 <div class="himidityCard">Humidity: ${day.humidity}%</div>
             </div>
         `

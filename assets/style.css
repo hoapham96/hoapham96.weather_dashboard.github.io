@@ -39,9 +39,10 @@ input {
 }
 .container{
     float: left;
-  width: 100%;
+  width: 99%;
   margin-bottom: 16px;
   padding: 0 8px;
+  height: 280px
 }
 .leftcolumn {
     float: left;
@@ -52,12 +53,12 @@ input {
 .rightcolumn{
     float: right;
     width: 75%;
+    margin: auto;
 }
 .dayForecast{
 position: absolute;
   width: 75%;
-  bottom: 200px;
-  border: 3px solid #8AC007
+  bottom: 340px;
 }
 .weather-item{
  
@@ -82,4 +83,15 @@ position: absolute;
     padding: 15px;
     border-radius: 10px;
     background: rgba(0,0,0,0.2)
+}
+.container{
+    border: solid;
+}
+.city-date {
+    font-size: 25px;
+    font-weight: bold;
+}
+.icon{
+    width: 60px;
+    height: 60px;
 }
